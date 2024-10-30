@@ -29,12 +29,19 @@ def expenseAdd(newExpense):
         expenseLog.update(newExpense)
     return expenseLog
 
-# This function will take the expenseLog from the expenseAdd() and pull it for user viewing
-# def expenseView(expenseDictionary):
+# This function will take the expenseLog from the expenseAdd() and pull it for user viewing. Still figuring out how to pull a key/value and print it one a single line
+def expenseView(expenseDictionary):
+    # Will use .keys() which pulls all keys from a dict and returns them in a form of alist
+    # After the keys are in the list, I will then loop through the list, pulling the keys and values to print on a single line
+    expDictKeys = expenseDictionary.keys()
+    for i in expDictKeys:
+        print(f"Expense: {expDictKeys[i]}: ${expenseDictionary[expDictKeys[i]]}\n")
+    
 
 
 
 
+# This function will pull all values from the expenseLog dict and sum them together
 def totalExpenseCalc(expenseDictionary):
     expenseSum = 0
     for key in expenseDictionary.keys():

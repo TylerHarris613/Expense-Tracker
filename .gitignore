@@ -1,0 +1,6 @@
+# Ignore macOS and iCloud metadata files
+.DS_Store
+.icloud
+.TemporaryItems
+.Trash
+

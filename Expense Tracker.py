@@ -43,10 +43,10 @@ def expenseView(expenseDictionary):
 
 # This function will pull all values from the expenseLog dict and sum them together
 def totalExpenseCalc(expenseDictionary):
-    expenseSum = 0
-    for key in expenseDictionary.keys():
-        expenseSum += expenseDictionary[key]
-    return expenseSum
+    # Will use .values() to pull all values into a list
+    # Then sum() the list to find the total expenses
+    expDictValues = expenseDictionary.values()
+    return sum(expDictValues)
 
 
 print("Welcome user to the expense tracker 'SNAKE EDITION' TM\n")

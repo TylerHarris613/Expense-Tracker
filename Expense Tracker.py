@@ -21,9 +21,13 @@ def expenseGet():
     print(f"You submitted an expense with description {expDisc}")
     return {expDisc:expAmount}
 
-def expenseAdd(expenseDisc):
+# This function will add the user inputted expense to the bigger dictionary for storage & organization
+def expenseAdd(expenseDisc, expenseAmount):
+    expenseLog = {}
+    expenseLog.update({expenseDisc:expenseAmount})
+    return expenseLog
 
-def expenseView():
+# def expenseView(expenseDictionary):
 
 
-def totalExpenseCalc():
+# def totalExpenseCalc():

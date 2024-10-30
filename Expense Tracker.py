@@ -62,9 +62,9 @@ while 0<1:
         newExp = expenseGet()
         expenseAdd(newExp)
     elif userChoice == "VIEW":
-        print(f"Your expenses are {expenseAdd}")
+        print(f"Your expenses are {expenseAdd(expenseLog)}")
     elif userChoice == "CALC":
-        print(f"Your total expenses sum up to: {totalExpenseCalc(expenseAdd)}")
+        print(f"Your total expenses sum up to: {totalExpenseCalc(expenseLog)}")
     else:
         break
     

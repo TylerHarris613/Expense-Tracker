@@ -10,6 +10,8 @@
 
 from decimal import Decimal
 
+expenseLog = {}
+
 # This function allows users to input expenses with a description and a dollar amount
 def expenseGet():
     try:    
@@ -22,9 +24,9 @@ def expenseGet():
     return {expDisc:expAmount}
 
 # This function will add the user inputted expense to the bigger dictionary for storage & organization
-def expenseAdd(expenseDisc, expenseAmount):
-    expenseLog = {}
-    expenseLog.update({expenseDisc:expenseAmount})
+def expenseAdd(newExpense):
+    if newExpense:
+        expenseLog.update(newExpense)
     return expenseLog
 
 # This function will take the expenseLog from the expenseAdd() and pull it for user viewing
@@ -50,7 +52,7 @@ while 0<1:
           CALC - You can calculate the sum of all your expenses\n\
           BREAK - To quit this program and go kiss your loved one <3\n")
     if userChoice == "ADD":
-        newExp = expenseGet
+        newExp = expenseGet()
         expenseAdd(newExp)
     elif userChoice == "VIEW":
         print(f"Your expenses are {expenseAdd}")

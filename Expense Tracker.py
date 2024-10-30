@@ -28,28 +28,34 @@ def expenseAdd(expenseDisc, expenseAmount):
     return expenseLog
 
 # This function will take the expenseLog from the expenseAdd() and pull it for user viewing
-def expenseView(expenseDictionary):
+# def expenseView(expenseDictionary):
 
 
 
 
+def totalExpenseCalc(expenseDictionary):
+    expenseSum = 0
+    for key in expenseDictionary.keys():
+        expenseSum += expenseDictionary[key]
+    return expenseSum
 
-# def totalExpenseCalc():
 
 print("Welcome user to the expense tracker 'SNAKE EDITION' TM\n")
 
 while 0<1:
     userChoice = input("What would you like to do?\
-          Type the option you would like\nADD - You can add an expense and its description\n\
+          Type the option you would like\n\
+          ADD - You can add an expense and its description\n\
           VIEW - You can view all expenses and their descriptions\n\
           CALC - You can calculate the sum of all your expenses\n\
-          BREAK - To quit this program and go kiss your loved one <3")
+          BREAK - To quit this program and go kiss your loved one <3\n")
     if userChoice == "ADD":
-        expenseAdd(expenseGet)
+        newExp = expenseGet
+        expenseAdd(newExp)
     elif userChoice == "VIEW":
-        expenseView(expenseAdd)
+        print(f"Your expenses are {expenseAdd}")
     elif userChoice == "CALC":
-        totalExpenseCalc(expenseAdd)
+        print(f"Your total expenses sum up to: {totalExpenseCalc(expenseAdd)}")
     else:
         break
     

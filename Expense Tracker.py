@@ -3,6 +3,9 @@
 # View all expenses.
 # Calculate the total amount spent.
 
+# Subscriptable objects in Python are those that allow them to be indexed using the square bracket notation, such as lists, dictionaries, and strings
+# Non-subscriptable objects don't support indexing operation, so will return a 'type object is not subscriptable' error
+
 # To push updates:
 # git add .
 # git commit -m "Description of changes made"
@@ -33,9 +36,12 @@ def expenseAdd(newExpense):
 def expenseView(expenseDictionary):
     # Will use .keys() which pulls all keys from a dict and returns them in a form of alist
     # After the keys are in the list, I will then loop through the list, pulling the keys and values to print on a single line
-    expDictKeys = expenseDictionary.keys()
-    for i in expDictKeys:
-        print(f"Expense: {expDictKeys[i]}: ${expenseDictionary[expDictKeys[i]]}\n")
+    # expDictKeys = expenseDictionary.keys()
+    # Using .get() to pull the 
+    print("Your expenses are:\n")
+    for i in expenseDictionary.keys():
+        # print(f"Expense: {expenseDictionary[i]}: ${expenseDictionary.get(i)}\n")
+        print(f"${expenseDictionary[i]}\n| {i}")
     
 
 
@@ -52,8 +58,7 @@ def totalExpenseCalc(expenseDictionary):
 print("Welcome user to the expense tracker 'SNAKE EDITION' TM\n")
 
 while 0<1:
-    userChoice = input("What would you like to do?\
-          Type the option you would like\n\
+    userChoice = input("What would you like to do? Type the option you would like\n\
           ADD - You can add an expense and its description\n\
           VIEW - You can view all expenses and their descriptions\n\
           CALC - You can calculate the sum of all your expenses\n\
@@ -62,7 +67,7 @@ while 0<1:
         newExp = expenseGet()
         expenseAdd(newExp)
     elif userChoice == "VIEW":
-        print(f"Your expenses are {expenseAdd(expenseLog)}")
+        expenseView(expenseLog)
     elif userChoice == "CALC":
         print(f"Your total expenses sum up to: {totalExpenseCalc(expenseLog)}")
     else:

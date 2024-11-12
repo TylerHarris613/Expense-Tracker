@@ -22,6 +22,7 @@ def expenseGet():
         print(f"You submitted an expense of ${expAmount}")    
     except ValueError:
         print("You're entering a money value here dummy, so make it a number when inputting!!!!\n")
+        return None
     expDisc = input("What is the expense for?")
     print(f"You submitted an expense with description {expDisc}")
     return {expDisc:expAmount}
@@ -37,7 +38,7 @@ def expenseView(expenseDictionary):
     # Will use .keys() which pulls all keys from a dict and returns them in a form of alist
     # After the keys are in the list, I will then loop through the list, pulling the keys and values to print on a single line
     # expDictKeys = expenseDictionary.keys()
-    # Using .get() to pull the 
+    # Using .get() to pull the value from a key-value pair
     print("Your expenses are:\n")
     for i in expenseDictionary.keys():
         # print(f"Expense: {expenseDictionary[i]}: ${expenseDictionary.get(i)}\n")
@@ -52,12 +53,12 @@ def totalExpenseCalc(expenseDictionary):
     # Will use .values() to pull all values into a list
     # Then sum() the list to find the total expenses
     expDictValues = expenseDictionary.values()
-    return sum(expDictValues)
+    return round(sum(expDictValues),2)
 
 
 print("Welcome user to the expense tracker 'SNAKE EDITION' TM\n")
 
-while 0<1:
+while True:
     userChoice = input("What would you like to do? Type the option you would like\n\
           ADD - You can add an expense and its description\n\
           VIEW - You can view all expenses and their descriptions\n\

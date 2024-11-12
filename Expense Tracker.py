@@ -17,6 +17,15 @@ expenseLog = {}
 
 # This function allows users to input expenses with a description and a dollar amount
 def expenseGet():
+    """
+    Prompts the user to input an expense description and its dollar amount
+
+    Params:
+        None
+
+    Returns:
+        A single Key-Value dictionary pair containing the expense desc and its dollar amount
+    """
     try:    
         expAmount = Decimal(input("How much is the expense?")) # Using Decimal() due to the money nature of the input. You should pass strings to Decimal in the User input
         print(f"You submitted an expense of ${expAmount}")    
@@ -29,30 +38,58 @@ def expenseGet():
 
 # This function will add the user inputted expense to the bigger dictionary for storage & organization
 def expenseAdd(newExpense):
+    """
+    Takes the user inputted expense amount/description key-value pair from expenseGet() and updates the global expense dictionary
+
+    Params:
+        A key-value dictionary pair representing the user-inputted expense amount/description
+
+    Returns:
+        None
+    """
     if newExpense:
         expenseLog.update(newExpense)
-    return expenseLog
+    # Don't need to return expenseLog as the dict is a global variable
+    # return expenseLog
 
 # This function will take the expenseLog from the expenseAdd() and pull it for user viewing. Still figuring out how to pull a key/value and print it one a single line
-def expenseView(expenseDictionary):
+def expenseView():
     # Will use .keys() which pulls all keys from a dict and returns them in a form of alist
     # After the keys are in the list, I will then loop through the list, pulling the keys and values to print on a single line
     # expDictKeys = expenseDictionary.keys()
     # Using .get() to pull the value from a key-value pair
+    """
+    Prints out all expense key-value pairs in a user-friendly formatted manner
+
+    Params:
+        None
+
+    Returns:
+    Prints out all expense pairs, returns none
+    """
     print("Your expenses are:\n")
-    for i in expenseDictionary.keys():
-        # print(f"Expense: {expenseDictionary[i]}: ${expenseDictionary.get(i)}\n")
-        print(f"${expenseDictionary[i]}\n| {i}")
+    for i in expenseLog.keys():
+        # print(f"Expense: {expenseLog[i]}: ${expenseLog.get(i)}\n")
+        print(f"${expenseLog[i]} | {i}")
     
 
 
 
 
 # This function will pull all values from the expenseLog dict and sum them together
-def totalExpenseCalc(expenseDictionary):
+def totalExpenseCalc():
     # Will use .values() to pull all values into a list
     # Then sum() the list to find the total expenses
-    expDictValues = expenseDictionary.values()
+    """
+    Calculates the sum of all expense values inputted by the user
+
+    Params:
+        None
+
+    Returns:
+        The sum of all expense values
+    """
+    expDictValues = expenseLog.values()
     return round(sum(expDictValues),2)
 
 
@@ -68,9 +105,9 @@ while True:
         newExp = expenseGet()
         expenseAdd(newExp)
     elif userChoice == "VIEW":
-        expenseView(expenseLog)
+        expenseView()
     elif userChoice == "CALC":
-        print(f"Your total expenses sum up to: {totalExpenseCalc(expenseLog)}")
+        print(f"Your total expenses sum up to: ${totalExpenseCalc()}")
     else:
         break
     

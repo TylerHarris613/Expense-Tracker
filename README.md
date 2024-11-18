@@ -1,35 +1,56 @@
-README.md for Expense Tracker
-Expense Tracker - SNAKE EDITION™
+# Expense Tracker - SNAKE EDITION™
 
-Description
+## Description
 
 Expense Tracker is a simple Python-based application that allows users to:
 
-Add expenses with a description and amount.
-View all recorded expenses.
-Calculate the total amount spent.
-This project is ideal for anyone looking to track their daily expenses and maintain a simple expense log.
+- **Add expenses** with a description and amount.
+- **View all expenses** with their details.
+- **Calculate the total amount spent.**
 
-Features
+This project demonstrates basic Python functionality, including input handling, loops, dictionaries, and user-defined functions. It is designed to help users manage their daily expenses while serving as a great learning exercise for Python programming.
 
-Add Expense: Enter a description and amount for an expense.
-View Expenses: View a list of all expenses and their descriptions.
-Calculate Total: Calculate the sum of all expenses recorded so far.
-Requirements
+---
 
-Python 3.x
-decimal module (standard library)
-Usage
+## Features
 
-Clone the repository.
-Run the script using Python:
-python expense_tracker.py
-Follow the prompts to add expenses, view expenses, or calculate the total.
-Future Features
+### Add Expenses:
 
-Ability to categorize expenses.
-Option to save the expense log to a file.
-Enhanced input validation and error handling.
-License
+- Input an expense description and corresponding amount.
+- Stores the information in a dictionary for easy organization.
 
-MIT License
+### View Expenses:
+
+- Displays all recorded expenses with their descriptions and amounts.
+
+### Calculate Total:
+
+- Provides the total amount spent by summing all recorded expenses.
+
+### User-Friendly Interface:
+
+- Simple prompts and clean output make the application easy to use.
+
+---
+
+## Requirements
+
+- **Python 3.x**
+- **decimal module** (part of the standard library, used for precise financial calculations).
+
+---
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/TylerHarris613/expense-tracker.git
+   cd expense-tracker
+   ```
+2. Run the program:
+   python expense_tracker.py
+3. Follow the prompts to:
+   Add expenses.
+   View all expenses.
+   Calculate the total amount spent.
+   Exit the program.
